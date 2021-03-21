@@ -3,14 +3,13 @@ import { StyleSheet, View, Dimensions } from 'react-native'
 import MapView from 'react-native-maps';
 import { LocationObject } from 'expo-location';
 
+import MenuFooter from '../MenuFooter';
+
 interface MapProps {
     region: LocationObject
 }
 
 export default function Map( { region }: MapProps ) {       
-
-    console.log(region);
-
     return (
 
         <View style={styles.container}>
@@ -29,6 +28,7 @@ export default function Map( { region }: MapProps ) {
                 }}
                 style={styles.map}
             ></MapView>
+            <MenuFooter />
         </View>
     )
 }
@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
+      flexDirection: 'column-reverse'
     },
     map: {
         width: Dimensions.get('window').width,
