@@ -1,26 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import routing from '../../../assets/routing.png';
-import navigation from '../../../assets/navigation.png';
-
-
-export default function MenuFooter(){
-
-
+const MenuFooter: React.FC = ({ children }) => {
+    
     return (
-
         <View style={style.container}>
-            <TouchableOpacity style={style.button}>
-               <Image source={routing} />
-               <Text style={style.btnText} >Criar Rota</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={style.button}>
-               <Image source={navigation} />
-               <Text style={style.btnText} >Executar Rota</Text>
-            </TouchableOpacity>
+            {children}
         </View>
-
     );
 };
 
@@ -39,14 +25,7 @@ const style = StyleSheet.create({
         paddingTop: 5,
         paddingBottom: 5,
         flexDirection: 'row'
-    },
-    button: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    btnText: {
-        fontSize: 10,
-        color: '#EAEAEA'
     }
 });
+
+export default MenuFooter;
